@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#ffffff"
+	android:gravity="center_horizontal"
+	android:orientation="vertical"
+	android:paddingBottom="25dp"
+	android:paddingLeft="15dp"
+	android:paddingRight="15dp"
+	android:paddingTop="25dp">
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="5dp"
+		android:text="来电设置"
+		android:textColor="@color/textFGColor"
+		android:textSize="14sp" />
+
+	<View
+		style="@style/zg_single_line"
+		android:layout_marginBottom="10dp" />
+	<!--<ImageView android:layout_width="match_parent" android:layout_height="wrap_content" 
+		android:scaleType="fitXY" android:layout_marginBottom="10dp" android:src="@drawable/list_divider" 
+		/> -->
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<LinearLayout
+				android:id="@+id/layout_EnableFlipSlient"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center_vertical">
+
+				<TextView
+					android:id="@+id/tv_EnableFlipSlient"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="10dp"
+					android:layout_weight="1"
+					android:focusable="false"
+					android:singleLine="true"
+					android:text="来电翻转静音"
+					android:textColor="#7a6f66"
+					android:textSize="18dp" />
+
+				<RelativeLayout
+					android:layout_width="wrap_content"
+					android:layout_height="18dp"
+					android:layout_marginRight="10dp">
+
+					<ToggleButton
+						android:id="@+id/toggle_EnableFlipSlient"
+						android:layout_width="60dp"
+						android:layout_height="wrap_content"
+						android:background="@drawable/toggle_selector"
+						android:gravity="left|center_vertical"
+						android:textColor="#7a6f66"
+						android:textOff=""
+						android:textOn=""
+						android:text="" />
+
+					<ImageButton
+						android:id="@+id/toggleButton_EnableFlipSlient"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_alignRight="@+id/toggle_EnableFlipSlient"
+						android:background="#00000000"
+						android:scaleType="fitEnd"
+						android:src="@drawable/progress_thumb_selector" />
+				</RelativeLayout>
+			</LinearLayout>
+
+
+
+		</LinearLayout>
+	</ScrollView>
+
+
+	<!-- <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" 
+		android:layout_marginTop="20dp" android:gravity="center_horizontal"> <TextView 
+		android:id="@+id/sdd_cancel" android:layout_width="110dp" android:layout_height="34dp" 
+		android:gravity="center" android:text="放弃" android:background="@drawable/ccorner_common_border_gray" 
+		android:textColor="#AAAAAA" android:textSize="14sp" /> <TextView android:id="@+id/sdd_exit" 
+		android:layout_width="110dp" android:layout_height="34dp" android:layout_marginLeft="15dp" 
+		android:gravity="center" android:text="保存" android:textColor="@color/textFGColor" 
+		android:background="@drawable/ccorner_common_border_gray" android:textSize="14sp" 
+		/> </LinearLayout> -->
+</LinearLayout>

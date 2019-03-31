@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	package="net.cmono.getalarm"
+	android:versionCode="1"
+	android:versionName="6.0.6.1">
+
+	<uses-sdk
+		android:minSdkVersion="19"
+		android:targetSdkVersion="19" />
+
+	<application
+		android:name="net.cmono.getalarm.GetAlarmApplication"
+		android:allowBackup="false"
+		android:icon="@mipmap/ic_launcher_tips"
+		android:persistent="true"
+		android:label="@string/app_name"
+		android:theme="@style/AppTheme">
+		
+		<activity
+			android:name="net.cmono.getalarm.SplashActivity"
+			android:label="@string/app_name"
+			android:launchMode="singleInstance"
+			android:theme="@style/Anim_push">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="net.cmono.getalarm.MainActivity">
+		</activity>
+		<activity android:name="net.cmono.getalarm.GuideActivity">
+		</activity>
+		<activity android:name="net.cmono.getalarm.LoginActivity">
+		</activity>
+		<activity
+			android:name="net.cmono.getalarm.CustomerPreferenceActivity"
+			android:launchMode="singleInstance">
+		</activity>
+		<activity
+			android:name="net.cmono.getalarm.AlarmHandlerActivity"
+			android:excludeFromRecents="true"
+			android:launchMode="singleInstance"
+			android:taskAffinity=""
+			android:theme="@style/FullScreenTheme" />
+
+		<!-- <activity android:name=".BasicSettingActivity" android:label="net.cmono.getalarm.BasicSettingActivity"> 
+			<intent-filter> <action android:name="net.cmono.getalarm.BasicSettingActivity"/> 
+			<category android:name="android.intent.category.DEFAULT"/> </intent-filter> 
+			</activity> -->
+
+		<provider
+			android:name="net.cmono.providers.ConfigContentProvider"
+			android:authorities="net.cmono.providers.configcontentprovider"
+			android:exported="true" />
+		<provider
+			android:name="net.cmono.providers.SpecialDayContentProvider"
+			android:authorities="net.cmono.providers.specialdaycontentprovider"
+			android:exported="true" />
+		<provider
+			android:name="net.cmono.providers.XmlConfigContentProvider"
+			android:authorities="net.cmono.providers.xmlconfigcontentprovider"
+			android:exported="true" />
+		<provider
+			android:name="net.cmono.providers.TTPodContentProvider"
+			android:authorities="net.cmono.providers.ttpodcontentprovider"
+			android:exported="true" />
+			<provider
+			android:name="net.cmono.providers.XiaMiContentProvider"
+			android:authorities="net.cmono.providers.xiamicontentprovider"
+			android:exported="true" />
+		<provider
+			android:name="net.cmono.providers.LockScreenMessageContentProvider"
+			android:authorities="net.cmono.providers.lockscreenmessagecontentprovider"
+			android:exported="true" />
+
+		<receiver android:name="net.cmono.receivers.AlarmHandlerReceiver">
+			<intent-filter>
+				<action android:name="net.cmono.getalarm.shownoti">
+				</action>
+			</intent-filter>
+		</receiver>
+		<receiver android:name="net.cmono.receivers.ALiYunNotificationReceiver">
+			<intent-filter>
+				<action android:name="com.aliyun.action.application.notification">
+				</action>
+			</intent-filter>
+		</receiver>
+		<receiver android:name="net.cmono.receivers.BootReceiver">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED">
+				</action>
+
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</receiver>
+		<receiver android:name="net.cmono.receivers.PhoneReceiver">
+			<intent-filter>
+				<action android:name="android.intent.action.PHONE_STATE" />
+				<action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+			</intent-filter>
+		</receiver>
+		<receiver android:name="net.cmono.receivers.BatteryInfoReceiver">
+			<intent-filter>
+				<action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+				<action android:name="android.intent.action.ACTION_BATTERY_CHANGED" />
+				<action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+				<action android:name="android.intent.action.ACTION_BATTERY_LOW" />
+				<action android:name="android.intent.action.ACTION_BATTERY_OKAY" />
+			</intent-filter>
+		</receiver>
+		<receiver android:name="net.cmono.receivers.ScreenUnlockReceiver">
+			<intent-filter android:priority="90000">
+				<action android:name="android.intent.action.USER_PRESENT" />
+			</intent-filter>
+		</receiver>
+		<receiver android:name="net.cmono.receivers.ConnectionChangeReceiver">
+		</receiver>
+		<receiver android:name="net.cmono.receivers.HomeWatcherReceiver">
+		</receiver>
+		<!-- <receiver android:name="net.cmono.receivers.ScreenUnlockReceiver"> 
+			<intent-filter> <action android:name="android.intent.action.SCREEN_OFF"></action> 
+			<action android:name="android.intent.action.SCREEN_ON"></action> <action 
+			android:name="android.intent.action.ACTION_POWER_CONNECTED"></action> <action 
+			android:name="android.intent.action.ACTION_POWER_DISCONNECTED"></action> 
+			<action android:name="android.intent.action.ACTION_SHUTDOWN"></action> </intent-filter> 
+			</receiver> -->
+
+		<receiver android:name="net.cmono.receivers.PackageOpertationReceiver">
+			<intent-filter>
+				<action android:name="android.intent.action.PACKAGE_ADDED" />
+				<action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+				<data android:scheme="package" />
+				<!-- 注意！！ 这句必须要加，否则接收不到BroadCast -->
+			</intent-filter>
+		</receiver>
+
+		<!-- android:process=":remote": 新开一个进程 -->
+		<receiver
+			android:name="net.cmono.receivers.TodayHistoryAlarmReceiver"
+			android:process=":remote" />
+
+		<!-- 注册Service -->
+		<service android:name="net.cmono.svrs.AutoWordService">
+		</service>
+		<service
+			android:name="net.cmono.svrs.NotificationLockScreenMonitor"
+			android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+			<intent-filter>
+				<action android:name="android.service.notification.NotificationListenerService" />
+			</intent-filter>
+		</service>
+
+		<!-- AMap Location -->
+		<service android:name="com.amap.api.location.APSService">
+		</service>
+
+		<activity
+			android:name="net.cmono.getalarm.HeadNotiActivity"
+			android:label="@string/title_activity_head_noti">
+		</activity>
+	</application>
+
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+	<uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="android.permission.READ_CONTACTS" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.READ_PROFILE" />
+	<uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS">
+	</uses-permission>
+	<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE">
+	</uses-permission>
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE">
+	</uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE">
+	</uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE">
+	</uses-permission>
+	<uses-permission android:name="android.permission.RESTART_PACKAGES" />
+
+	<uses-feature
+		android:name="android.hardware.camera"
+		android:required="true" />
+
+	<uses-permission android:name="android.permission.DISABLE_KEYGUARD">
+	</uses-permission>
+	<uses-permission android:name="android.permission.WAKE_LOCK">
+	</uses-permission>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.RECEIVE_SMS" />
+	<uses-permission android:name="android.permission.READ_SMS" />
+	<uses-permission android:name="android.permission.READ_LOGS" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+	<!-- 这个权限用于进行网络定位 -->
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION">
+	</uses-permission>
+	<!-- 这个权限用于访问GPS定位 -->
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">
+	</uses-permission>
+	<!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE">
+	</uses-permission>
+	<!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE">
+	</uses-permission>
+	<!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE">
+	</uses-permission>
+	<!-- 用于读取手机当前的状态 -->
+	<uses-permission android:name="android.permission.READ_PHONE_STATE">
+	</uses-permission>
+	<!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE">
+	</uses-permission>
+	<!-- 访问网络，网络定位需要上网 -->
+	<uses-permission android:name="android.permission.INTERNET" />
+	<!-- SD卡读取权限，用户写入离线定位数据 -->
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS">
+	</uses-permission>
+
+</manifest>

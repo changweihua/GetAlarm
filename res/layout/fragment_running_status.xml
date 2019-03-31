@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:layout_marginTop="@dimen/statusBarHeight">
+	<TabHost
+		android:id="@+id/mtabhost"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+			<!-- android:showDividers="none"//这样tabwidget内tab间的分割线就没有了，就可以做viewpager的指示器了(内容是个imageview)，显示到viewpager的哪一个item 
+				android:divider="#ff00ff" //这样tabwidget内tab间就又分割线了，而且分割线的颜色为#ff00ff -->
+
+			<TabWidget
+				android:id="@android:id/tabs"
+				android:divider="@color/statusBarBGColor"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+
+			<FrameLayout
+				android:id="@android:id/tabcontent"
+				android:padding="10dp"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+
+				<LinearLayout
+					android:id="@+id/Tab1"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:orientation="vertical">
+
+					<!-- android:fontFamily="yunos-thin" -->
+
+					<net.cmono.wheelview.LoopView
+						android:id="@+id/loopView"
+						android:layout_width="wrap_content"
+						android:visibility="gone"
+						android:layout_height="wrap_content" />
+
+					<TextView
+						android:id="@+id/main_phoneinfo"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_alignParentLeft="true"
+						android:layout_alignParentRight="true"
+						android:layout_alignParentTop="true"
+						android:textColor="@color/textFGColor" />
+
+
+
+				</LinearLayout>
+
+				<LinearLayout
+					android:id="@+id/Tab2"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:orientation="vertical">
+
+					<!--<TextView android:id="@+id/wifi_info" android:layout_width="match_parent" 
+						android:layout_height="wrap_content" android:layout_alignParentLeft="true" 
+						android:layout_alignParentRight="true" android:layout_alignParentTop="true" 
+						android:textColor="@color/textFGColor" /> -->
+
+					<ListView
+						android:id="@+id/wifi_info"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_alignParentLeft="true"
+						android:layout_alignParentRight="true"
+						android:layout_alignParentTop="true"
+						android:textColor="@color/textFGColor" />
+
+				</LinearLayout>
+
+				<LinearLayout
+					android:id="@+id/Tab3"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:orientation="vertical">
+
+					<ListView
+						android:id="@+id/sim_info"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_alignParentLeft="true"
+						android:layout_alignParentRight="true"
+						android:layout_alignParentTop="true"
+						android:textColor="@color/textFGColor" />
+
+				</LinearLayout>
+			</FrameLayout>
+		</LinearLayout>
+	</TabHost>
+</LinearLayout>

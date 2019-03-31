@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- 设置的类别 -->
+    <PreferenceCategory
+        android:key="displayCfg"
+        android:summary="运营商信息"
+        android:title="运营商信息" >
+        <CheckBoxPreference
+            android:key="showSIMInfo"
+            android:summaryOff="隐藏运营商"
+            android:summaryOn="显示运营商"
+            android:title="是否显示运营商"
+            android:widgetLayout="@layout/cp_checkbox" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="infoCfg"
+        android:summary="个人信息"
+        android:title="个人信息" >
+        <EditTextPreference
+            android:background="@drawable/cp_textfield"
+            android:key="nickName"
+            android:summary="姓名"
+            android:title="请输入昵称" />
+
+        <CheckBoxPreference
+            android:key="showNickName"
+            android:summaryOff="隐藏昵称"
+            android:summaryOn="显示昵称"
+            android:title="是否显示昵称"
+            android:widgetLayout="@layout/cp_checkbox" />
+
+        <ListPreference
+            android:dialogTitle="请选择星座"
+            android:entries="@array/horoscopes"
+            android:entryValues="@array/horoscopeENs"
+            android:key="horoscope"
+            android:summary="点击弹出星座列表"
+            android:title="我的星座" />
+
+        <CheckBoxPreference
+            android:key="showHoroscope"
+            android:summaryOff="隐藏星座"
+            android:summaryOn="显示星座"
+            android:title="是否显示星座"
+            android:widgetLayout="@layout/cp_checkbox" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="wordCfg"
+        android:summary="每日一句"
+        android:title="每日一句" >
+        <EditTextPreference
+            android:background="@drawable/cp_textfield"
+            android:key="word"
+            android:summary=""
+            android:title="请输入每日一句" />
+
+        <CheckBoxPreference
+            android:key="showWord"
+            android:summaryOff="隐藏每日一句"
+            android:summaryOn="显示每日一句"
+            android:title="是否显示每日一句"
+            android:widgetLayout="@layout/cp_checkbox" />
+        <CheckBoxPreference
+            android:key="wordMode"
+            android:summaryOff="中文格式"
+            android:summaryOn="英文格式"
+            android:title="每日一句语言格式"
+            android:widgetLayout="@layout/cp_checkbox" />
+        <CheckBoxPreference
+            android:key="autoWord"
+            android:summaryOff="手动设置每日一句"
+            android:summaryOn="自动获取每日一句"
+            android:title="是否自动获取每日一句"
+            android:widgetLayout="@layout/cp_checkbox" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="dayCfg"
+        android:summary="特殊节日提醒服务"
+        android:title="特殊节日" >
+        <CheckBoxPreference
+            android:key="showSpecialDay"
+            android:summaryOff="隐藏特殊节日"
+            android:summaryOn="显示特殊节日"
+            android:title="是否显示特殊节日"
+            android:widgetLayout="@layout/cp_checkbox" />
+        <CheckBoxPreference
+            android:key="showTraditionalDayCover"
+            android:summaryOff="隐藏节日壁纸"
+            android:summaryOn="显示节日壁纸"
+            android:title="是否显示节日壁纸"
+            android:widgetLayout="@layout/cp_checkbox" />
+        <CheckBoxPreference
+            android:key="showWeekDay"
+            android:summaryOff="低调显示星期"
+            android:summaryOn="强调显示星期"
+            android:title="是否强调提示星期"
+            android:widgetLayout="@layout/cp_checkbox" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="msgCfg"
+        android:summary="消息锁屏显示"
+        android:title="锁屏消息" >
+        <CheckBoxPreference
+            android:key="showMsg"
+            android:summaryOff="隐藏第三方消息"
+            android:summaryOn="显示第三方消息"
+            android:title="是否显示第三方消息"
+            android:widgetLayout="@layout/cp_checkbox" />
+        <CheckBoxPreference
+            android:key="showUnlockInfo"
+            android:summaryOff="隐藏解锁提示消息"
+            android:summaryOn="显示解锁提示消息"
+            android:title="是否显示解锁提示消息"
+            android:widgetLayout="@layout/cp_checkbox" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="batteryCfg"
+        android:summary="电量和解锁动画效果"
+        android:title="动画效果" >
+        <CheckBoxPreference
+            android:key="showBatterCharging"
+            android:summaryOff="隐藏充电动画"
+            android:summaryOn="显示充电动画"
+            android:title="是否显示充电动画"
+            android:widgetLayout="@layout/cp_checkbox" />
+        <CheckBoxPreference
+            android:key="showBatteryLosing"
+            android:summaryOff="隐藏耗电动画"
+            android:summaryOn="显示耗电动画"
+            android:title="是否显示耗电动画"
+            android:widgetLayout="@layout/cp_checkbox" />
+        <CheckBoxPreference
+            android:key="showFish"
+            android:summaryOff="隐藏  Glass Fish"
+            android:summaryOn="显示 Glass Fish"
+            android:title="是否  Glass Fish"
+            android:widgetLayout="@layout/cp_checkbox" />
+        <CheckBoxPreference
+            android:key="showKJGJP"
+            android:summaryOff="隐藏 快捷工具"
+            android:summaryOn="显示快捷工具"
+            android:title="是否显示快捷工具"
+            android:widgetLayout="@layout/cp_checkbox" />
+    </PreferenceCategory>
+
+    <!--
+   <PreferenceScreen
+        android:summary="settings about emotions"
+        android:title="Emotions" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:summaryOff="No,I am sorry."
+            android:summaryOn="Yes,I love you!"
+            android:title="Love me?" >
+        </CheckBoxPreference>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:summaryOff="No,you are a good person."
+            android:summaryOn="Yes,I hate you!"
+            android:title="Hate me?" >
+        </CheckBoxPreference>
+    </PreferenceScreen>
+    
+   <PreferenceScreen
+        android:summary="settings about relations"
+        android:title="Relations" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:summaryOff="No,I am sorry."
+            android:summaryOn="Yes,we are family!"
+            android:title="Family?" >
+        </CheckBoxPreference>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:summaryOff="No,I am sorry."
+            android:summaryOn="Yes,we are friends!"
+            android:title="Friends?" >
+        </CheckBoxPreference>
+    </PreferenceScreen>
+    -->
+    
+    <PreferenceCategory
+        android:key="locationCfg"
+        android:summary="我的位置"
+        android:title="我的位置源" >
+        <ListPreference
+            android:dialogTitle="请选择城市"
+            android:entries="@array/cities"
+            android:entryValues="@array/cities"
+            android:key="myLocation"
+            android:summary="点击弹出城市列表"
+            android:title="所属城市" />
+    </PreferenceCategory>
+    
+
+</PreferenceScreen>

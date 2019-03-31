@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- 来电设置 -->
+    <PreferenceCategory
+        android:key="incallCfg"
+        android:paddingTop="@dimen/statusBarHeight"
+        android:summary="来电手势设置"
+        android:title="来电设置" >
+        <CheckBoxPreference
+            android:key="enableFlipSlient"
+            android:summaryOff="关闭来电翻转静音"
+            android:summaryOn="开启来电翻转静音"
+            android:title="是否开启来电静音"
+            android:widgetLayout="@layout/cp_checkbox" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="statusBarBGColor">#FF10B3B2</color>
+	<color name="textFGColor">#FF10B3B2</color>
+	<color name="white">#FFFFFFFF</color>
+	<color name="blue">#10B3B2</color>
+
+	<color name="list_divider_color">#10B3B2</color>
+
+	<!-- 描边颜色 -->
+	<color name="border_clo">#ccc</color>
+	<color name="text_clo">#333</color>
+
+	<!-- GridView -->
+	<color name="software_textColor_selected">#FFFFFF</color>
+	<color name="software_textColor_unselected">#10B3B2</color>
+
+	<color name="item_grid_selected">#10B3B2</color>
+	<color name="item_grid_unselected">#FFFFFF</color>
+
+	<color name="gray">#696969</color>
+
+	<!-- 关于界面 -->
+	<color name="listview_item_textview_pressed">#FFFFFF</color>
+	<color name="listview_item_textview_normal">#10B3B2</color>
+
+	<color name="griditems_bg">#ffe8ecef</color>
+	<color name="commo_text_color">#ff333333</color>
+	<color name="line">#ffd3dde6</color>
+
+	<color name="black_65">#10B3B2</color>
+
+	<color name="wheel_timebtn_nor">#54a3fa</color>
+	<color name="wheel_timebtn_pre">#CCCCCC</color>
+
+	<color name="color_accent">#7c4dff</color>
+	<color name="color_success">#3CCD88</color>
+	<color name="color_error">#f44336</color>
+
+
+	<color name="green">#00FF00</color>
+	<color name="thumbColor">#66aaaaaa</color>
+
+	<!-- 设置透明度为56%(9/16)左右 -->
+	<color name="AlarmBG">#9000</color>
+</resources>

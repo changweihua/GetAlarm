@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_alignParentBottom="true"
+	android:orientation="vertical"
+	android:padding="@dimen/mg_20">
+	<LinearLayout style="@style/wrap_layout">
+		<!-- 上圆角 -->
+		<LinearLayout style="@style/top_layout">
+			<TextView
+				android:id="@+id/tv_take_photo"
+				style="@style/usertext"
+				android:text="个性签名"
+				android:textColor="@drawable/listview_item_textview" />
+			<ImageView style="@style/img_arrow" />
+		</LinearLayout>
+
+		<!-- 分割线 -->
+		<View style="@style/bg_line" />
+
+		<!-- 下圆角 -->
+		<LinearLayout style="@style/bottom_layout">
+			<TextView
+				android:id="@+id/tv_choose_photo"
+				style="@style/usertext"
+				android:text="消息通知"
+				android:textColor="@drawable/listview_item_textview" />
+			<ImageView style="@style/img_arrow" />
+		</LinearLayout>
+
+	</LinearLayout>
+
+
+	<!-- 全圆角 -->
+	<LinearLayout style="@style/wrap_layout">
+		<LinearLayout style="@style/single_layout">
+			<TextView
+				style="@style/usertext"
+				android:id="@+id/tv_cancel"
+				android:text="辅助功能"
+				android:textColor="@drawable/listview_item_textview" />
+			<ImageView style="@style/img_arrow" />
+		</LinearLayout>
+
+	</LinearLayout>
+</LinearLayout> 

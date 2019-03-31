@@ -1,0 +1,36 @@
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:layout_marginTop="@dimen/statusBarHeight">
+	<CalendarView
+		android:id="@+id/calendarView1"
+		android:layout_width="match_parent"
+		android:scaleType="centerCrop"
+		android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+		android:layout_above="@+id/svAction"
+		android:layout_alignBottom="@+id/svAction"
+		android:visibility="visible" />
+	<ScrollView
+		android:id="@+id/svAction"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:fillViewport="true"
+		android:gravity="center_horizontal"
+		android:layout_alignParentBottom="true"
+		android:scrollbars="none">
+
+		<net.cmono.exts.BorderedGridView
+			android:id="@+id/gridview"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:horizontalSpacing="0.0dip"
+			android:listSelector="@null"
+			android:numColumns="3"
+			android:scrollbars="none"
+			android:stretchMode="columnWidth"
+			android:verticalSpacing="0.0dip" />
+	</ScrollView>
+
+</RelativeLayout>  
